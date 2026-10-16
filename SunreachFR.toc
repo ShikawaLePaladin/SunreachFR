@@ -1,0 +1,24 @@
+## Interface: 11200
+## Title: Sunreach FR
+## Notes: Traduction française (données du serveur Sunreach + traductions non officielles)
+## Author: Sunreach
+## Version: 0.6.0
+## SavedVariables: SunreachFRDB
+Core.lua
+Compat.lua
+UI.lua
+data\Items.lua
+data\NPC.lua
+data\Quests.lua
+data\Books.lua
+data\Chat.lua
+data\Spells.lua
+data\Descriptions.lua
+data\Extra_DB.lua
+data\Extra_pfQuest.lua
+data\Extra_Babble.lua
+Items.lua
+Units.lua
+Quests.lua
+Spells.lua
+Misc.lua
