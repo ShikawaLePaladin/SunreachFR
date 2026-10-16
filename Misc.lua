@@ -67,6 +67,23 @@ SFR.HookGlobal("TaxiNodeName", function(orig, i)
 	return n
 end)
 
+-- reputation faction names (UNOFFICIAL list, see data\Unofficial_Factions.lua; other addons still get the English name)
+local function FactionFr(en)
+	if en and en ~= "" and SFR.On("factions") and SFR_D.faction then
+		local fr = SFR_D.faction[en]
+		if fr and not SFR.CallerIsAddon() then return fr end
+	end
+	return en
+end
+SFR.HookGlobal("GetFactionInfo", function(orig, i)
+	local name, desc, c, d, e, f, g, h, isHeader, k, l = orig(i)
+	return FactionFr(name), desc, c, d, e, f, g, h, isHeader, k, l
+end)
+SFR.HookGlobal("GetWatchedFactionInfo", function(orig)
+	local name, b, c, d, e = orig()
+	return FactionFr(name), b, c, d, e
+end)
+
 -- "deepitems": GetItemInfo returns the French name first
 SFR.HookGlobal("GetItemInfo", function(orig, a1)
 	local a, b, c, d, e, f, g, h, i = orig(a1)

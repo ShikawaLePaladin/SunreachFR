@@ -4,7 +4,7 @@
 -- for spells, talents and interface lines. Every hook runs under pcall: a translation problem never breaks the UI.
 
 SFR = SFR or {}
-SFR.version = "0.6.0"
+SFR.version = "0.7.0"
 SFR.stats = {}
 SFR_D = SFR_D or {}
 
@@ -13,6 +13,7 @@ SFR.DEFAULTS = {
 	items = 1, units = 1, quests = 1, gossip = 1, books = 1, chatlinks = 1, chatnpc = 1, tooltipui = 1, spells = 1,
 	professions = 1, collect = 1,
 	deepnames = 1, deepitems = 1, deepspells = 1, -- names everywhere (unit frames, AtlasLoot lists, spellbook); /sfr safe turns them off
+	factions = 1, -- noms des factions de reputation (liste NON OFFICIELLE)
 	zones = 1, -- FR par defaut : la normalisation est geree dans AutoMarkerOW/Shikato/RaidTools (v0.3.1)
 }
 SFR.DESC = {
@@ -31,6 +32,7 @@ SFR.DESC = {
 	deepitems = "GetItemInfo en francais (AtlasLoot, listes...) - peut gener des addons d'inventaire",
 	deepspells = "noms de sorts dans grimoire/talents/barres - peut gener des addons de rotation",
 	zones = "noms de zones (peut gener les addons qui comparent les noms de zones)",
+	factions = "noms des factions dans le panneau de reputation - NON OFFICIEL",
 }
 
 function SFR.Print(msg)

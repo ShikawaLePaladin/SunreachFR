@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.7.0 - 2026-10-17
+
+### Added
+
+* **Unofficial French layer** (`data\Unofficial_*.lua`, loaded after the official data, never replaces an official entry): about
+  8 800 item names, 3 700 NPC names, 2 300 quest titles, 880 class spell / talent names, 1 200 world object names,
+  650 gossip options and 340 zone names that had no French source. Written by hand from the English text with the vocabulary of
+  the official data (see README). Remove the `Unofficial_*` lines of the `.toc` to switch it off.
+* **Reputation faction names** (`factions` option, `GetFactionInfo` / `GetWatchedFactionInfo`), French for the game's interface,
+  English for other addons like every other hook. 52 names, also unofficial.
+
+### Changed
+
+* Version 0.7.0; the `.toc` lists the new data files.
+
 ## 0.6.0 - 2026-10-16
 
 Audit release. Most of it fixes things that silently did not work.

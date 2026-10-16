@@ -4,7 +4,7 @@ French translation layer for the **Sunreach** private server (WoW 1.12 / Turtle-
 It does not touch the client files: it rewrites the texts the game shows (tooltips, names, quests, books, NPC chat...) while the
 original English strings stay available to every other addon.
 
-Version 0.6.0 - author "Sunreach". Saved variable: `SunreachFRDB`.
+Version 0.7.0 - author "Sunreach". Saved variable: `SunreachFRDB`.
 
 ## What is translated, and where the French comes from
 
@@ -22,11 +22,34 @@ Version 0.6.0 - author "Sunreach". Saved variable: `SunreachFRDB`.
 | Tooltip lines ("Binds when picked up", "Requires Level"...), classes, races | about 150 lines | **Unofficial** (`UI.lua`) |
 
 Be aware of the limits: the server database has **no French spell data at all**, and the Turtle-specific content (custom items,
-quests, NPCs, zones, ids 40000+) has no French source anywhere. Those texts stay in English.
+quests, NPCs, zones, ids 40000+) has no official French source anywhere.
 "Unofficial" means the French was written by hand and has not been checked against a French client.
-Everything else comes from the files listed above, nothing is machine-translated at run time.
+Nothing is machine-translated at run time: every entry is a fixed string in a data file.
 
-Generated lists of what is still untranslated are kept outside the repository by the maintainer (items, NPCs, quests, spells...).
+### Unofficial layer (0.7.0)
+
+For everything that has **no French source at all**, version 0.7.0 adds a layer of French names written from the English ones
+(by the maintainer's AI assistant, Claude, using the vocabulary of the official French data already present: Grumegueule,
+Sombrefer, Foudrepique, KapitalRisk...). It is meant to be better than English, not to be official: expect odd wording and the
+occasional wrong word.
+
+| Area | Entries | Notes |
+|---|---|---|
+| Item names (mostly Turtle custom, ids 40000+) | 8 812 of 9 895 untranslated | internal / test / placeholder items are left alone |
+| NPC names | 3 712 of 4 734 untranslated | roles and creature types are translated; personal names are kept |
+| Quest titles | 2 316 of 2 331 | titles only, the quest texts stay English |
+| Class spell / talent names | 882 of 939 | many are internal passive names |
+| World objects (chests, ore veins, signs...) | 1 220 of 1 262 | model paths and internal names are skipped |
+| NPC gossip options | 654 of 664 | |
+| Zone names | 340 of 451 | the rest are identical in French |
+| Reputation factions | 52 | new `factions` option |
+
+These tables are `data\Unofficial_*.lua`. They are loaded last and `SFR.AddData` never replaces an official entry, so anything with
+an official translation keeps it. To switch the whole layer off, delete the `data\Unofficial_*.lua` lines from `SunreachFR.toc`.
+The generators and the English/French word lists live outside the repository; ask if you want them.
+
+Texts that still stay in English: quest descriptions of Turtle custom quests, NPC chat lines that contain `$n`/`$c` tokens, and
+spell / item-effect descriptions for rogue, hunter, shaman and warlock.
 
 ## Installation
 
@@ -48,7 +71,7 @@ localised addon). Nothing to configure.
 | `/sfr stats` | what was translated this session |
 | `/sfr clearmiss` | empty the list of untranslated texts noted in `SunreachFRDB.miss` |
 
-Options: `items units quests gossip books chatlinks chatnpc tooltipui spells professions collect deepnames deepitems deepspells zones`.
+Options: `items units quests gossip books chatlinks chatnpc tooltipui spells professions collect deepnames deepitems deepspells zones factions`.
 `collect` (on by default) writes the English texts it could not translate into `SunreachFRDB.miss`; switch it off if you do not need that.
 
 ## Compatibility with other addons

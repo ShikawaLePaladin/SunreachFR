@@ -2,7 +2,7 @@
 ## Title: Sunreach FR
 ## Notes: Traduction française (données du serveur Sunreach + traductions non officielles)
 ## Author: Sunreach
-## Version: 0.6.0
+## Version: 0.7.0
 ## SavedVariables: SunreachFRDB
 Core.lua
 Compat.lua
@@ -17,6 +17,14 @@ data\Descriptions.lua
 data\Extra_DB.lua
 data\Extra_pfQuest.lua
 data\Extra_Babble.lua
+data\Unofficial_Spells.lua
+data\Unofficial_Zones.lua
+data\Unofficial_Gossip.lua
+data\Unofficial_Factions.lua
+data\Unofficial_NPC.lua
+data\Unofficial_GO.lua
+data\Unofficial_Quests.lua
+data\Unofficial_Items.lua
 Items.lua
 Units.lua
 Quests.lua
